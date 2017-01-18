@@ -5,8 +5,6 @@ import com.allstate.repositories.IMovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class MovieService {
     private IMovieRepository repository;
@@ -41,8 +39,7 @@ public class MovieService {
         old.setTitle(movie.getTitle());
         old.setWatched(movie.isWatched());
         old.setRating(movie.getRating());
-        old.setReleased(movie.getReleased());
-        old.setLength(movie.getLength());
+        old.setMovieLength(movie.getMovieLength());
         return this.repository.save(old);
     }
 }

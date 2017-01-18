@@ -1,11 +1,8 @@
-CREATE TABLE `movies` (
-  `id`       INT          NOT NULL  AUTO_INCREMENT,
-  `version`  INT          NOT NULL  DEFAULT 0,
-  `title`    VARCHAR(255) NOT NULL,
-  `watched`  BOOLEAN      NULL      DEFAULT FALSE,
-  `rating`   VARCHAR(5)   NULL,
-  `released` DATE         NULL,
-  `length`   INT          NULL,
-  `created`  TIMESTAMP    NULL      DEFAULT NOW(),
-  `modified` TIMESTAMP    NULL      DEFAULT NOW(),
-  PRIMARY KEY (`id`));
+CREATE TABLE movies(
+  id       INT          NOT NULL,
+  version  INT          NOT NULL  DEFAULT 0,
+  title    VARCHAR(255) NOT NULL,
+  watched  VARCHAR(10)  NULL,
+  rating   VARCHAR(10)          NULL,
+  movie_length   INT          NULL,
+  PRIMARY KEY (id));

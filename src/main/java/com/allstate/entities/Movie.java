@@ -1,25 +1,19 @@
 package com.allstate.entities;
 
-import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "movies")
-@Data
+
 public class Movie {
     private int id;
     private int version;
     private String title;
     private boolean watched;
     private String rating;
-    private Date released;
-    private int length;
-    private Date created;
-    private Date modified;
+    private int movieLength;
+
+
 
     @Id
     @GeneratedValue
@@ -46,19 +40,29 @@ public class Movie {
         this.title = title;
     }
 
-    @CreationTimestamp
-    public Date getCreated() {
-        return created;
-    }
-    public void setCreated(Date created) {
-        this.created = created;
+
+
+    public boolean isWatched() {
+        return watched;
     }
 
-    @UpdateTimestamp
-    public Date getModified() {
-        return modified;
+    public void setWatched(boolean watched) {
+        this.watched = watched;
     }
-    public void setModified(Date modified) {
-        this.modified = modified;
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public int getMovieLength() {
+        return movieLength;
+    }
+
+    public void setMovieLength(int length) {
+        this.movieLength = movieLength;
     }
 }

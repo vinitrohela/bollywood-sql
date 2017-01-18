@@ -30,7 +30,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.flywaydb:flyway-core')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	runtime('mysql:mysql-connector-java')
-	compileOnly('org.projectlombok:lombok')
+	runtime "com.microsoft.sqlserver.SQLServerDriver:sqljdbc4"
+	compile("com.microsoft.sqlserver.SQLServerDriver:sqljdbc4")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+    system 'com.microsoft.sqlserver.SQLServerDriver:sqljdbc4'
+
 }
