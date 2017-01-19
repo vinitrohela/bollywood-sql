@@ -15,6 +15,8 @@ public class MovieService {
     }
 
     public Movie create(Movie m){
+        m.setId(m.getId());
+        System.out.println("id............................"+m.getId());
         return this.repository.save(m);
     }
 

@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "movies")
-
 public class Movie {
     private int id;
     private int version;

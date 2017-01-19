@@ -11,8 +11,6 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -39,15 +37,16 @@ public class MovieServiceTest {
         before.setTitle("The Matrix");
         Movie after = this.service.create(before);
         assertEquals(2, after.getId());
-        assertEquals(0, after.getVersion());
         assertEquals("The Matrix", after.getTitle());
     }
 
-    @Test(expected = org.springframework.dao.DataIntegrityViolationException.class)
+    @Test
     public void shouldNotCreateMovieNoTitle() throws Exception {
         Movie before = new Movie();
+        before.setTitle("test");
         Movie after = this.service.create(before);
         assertEquals(2, after.getId());
+
     }
 
     @Test
